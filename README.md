@@ -19,6 +19,6 @@
 
 모형의 원자핵과 전자의 수·크기는 이해를 돕기 위해 단순하게 나타낸 것입니다. 모형 그림은 모두 새로 그렸습니다.
 
-해 보기 사진 `images/can-experiment.jpg`: 비상교육 중학교 과학 2 교과서 232쪽 사진을 편집(필요한 부분만 자르고 글자를 지운 뒤 이름표를 다시 적고 털가죽의 위치를 옮김). 저작권은 출판사에 있으므로 수업 목적으로만 사용해 주세요.
+해 보기 사진 `images/can-charged-straw.jpg`: 비상교육 중학교 과학 2 교과서 232쪽 사진을 편집(필요한 부분만 자르고, 글자를 지운 뒤 이름표를 바꾸어 적음). 저작권은 출판사에 있으므로 수업 목적으로만 사용해 주세요.
 
 생각 열기 사진 `images/cat-static.jpg`: [Cat demonstrating static cling with styrofoam peanuts](https://commons.wikimedia.org/wiki/File:Cat_demonstrating_static_cling_with_styrofoam_peanuts.jpg) — Sean McGrath(원본), Black Rainbow 999(편집), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
