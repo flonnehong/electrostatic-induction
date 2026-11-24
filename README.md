@@ -17,4 +17,6 @@
 
 ## 참고
 
-모형의 원자핵과 전자의 수·크기는 이해를 돕기 위해 단순하게 나타낸 것입니다. 그림은 모두 새로 그렸습니다.
+모형의 원자핵과 전자의 수·크기는 이해를 돕기 위해 단순하게 나타낸 것입니다. 모형 그림은 모두 새로 그렸습니다.
+
+생각 열기 사진 `images/cat-static.jpg`: [Cat demonstrating static cling with styrofoam peanuts](https://commons.wikimedia.org/wiki/File:Cat_demonstrating_static_cling_with_styrofoam_peanuts.jpg) — Sean McGrath(원본), Black Rainbow 999(편집), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)

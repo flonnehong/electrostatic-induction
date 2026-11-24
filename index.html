@@ -104,6 +104,8 @@ footer{padding:40px 0 60px;color:var(--ink-2);font-size:14px}
 :root{--pos:#cf2f62;--neg:#2265c9;--metal:#dfe3e8;--metal-2:#b5bcc6}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--pos:#ff6d97;--neg:#69a6ff;--metal:#3a414c;--metal-2:#59626f}}
 :root[data-theme="dark"]{--pos:#ff6d97;--neg:#69a6ff;--metal:#3a414c;--metal-2:#59626f}
+.fig-photo{max-width:480px}
+.fig-photo a{color:inherit}
 header.hero{padding:40px 16px 24px}
 canvas{touch-action:manipulation}
 ol li{margin:4px 0}
@@ -160,6 +162,11 @@ input[type=number]{width:84px;font:inherit;font-size:16px;padding:6px 8px;border
 <section id="intro">
   <span class="tag">① 생각 열기 · 5분</span>
   <h2>전기를 띠지 않은 금속에 대전체를 가까이 하면?</h2>
+  <figure class="fig-photo">
+    <img src="images/cat-static.jpg" alt="온몸에 하얀 스티로폼 조각이 잔뜩 달라붙은 고양이" width="436" height="289">
+    <figcaption>사진: <a href="https://commons.wikimedia.org/wiki/File:Cat_demonstrating_static_cling_with_styrofoam_peanuts.jpg" target="_blank" rel="noopener">Sean McGrath(원본), Black Rainbow 999(편집), 위키미디어 공용</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></figcaption>
+  </figure>
+  <p>고양이 털이 마찰하여 전기를 띠자 스티로폼 조각들이 털에 달라붙었어요. 그렇다면 <b>금속</b>으로 된 캔은 어떨까요?</p>
   <p>털가죽으로 문지른 플라스틱 빨대는 <b class="neg">(−)전하</b>를 띠어요. 이 빨대를 <b>마찰하지 않은 빈 알루미늄 캔</b>에 닿지 않게 가까이 가져가요.</p>
   <div class="question">알루미늄 캔은 어떻게 될까?<small>예상을 고르면 우리 반 친구들의 예상을 볼 수 있어요.</small></div>
   <div class="seg" id="predict"><button data-v="끌려온다">끌려온다</button><button data-v="밀려난다">밀려난다</button><button data-v="변화 없다">변화 없다</button></div>
