@@ -150,3 +150,10 @@ a.btn{font-size:15px;font-weight:500;border-radius:10px;border:1px solid var(--l
 .warn{color:var(--bad);font-size:14px;font-weight:700}.okc{color:var(--ok)}
 .dotc{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--line);margin-right:6px}.dotc.live{background:var(--ok)}
 td.acts{white-space:nowrap}td.acts button{font-size:13px;padding:5px 9px;margin:2px}
+.qrcard{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center}
+.qrbtn{padding:0;border-radius:12px;overflow:hidden;background:#fff;line-height:0}
+.qrurl{font-weight:700;word-break:break-all;margin:4px 0}
+.qrdlg{border:0;border-radius:20px;padding:20px 28px;background:#fff;color:#1d1f24;text-align:center;max-width:96vw;max-height:96vh}
+.qrdlg::backdrop{background:rgba(0,0,0,.7)}
+.qrdlg img{display:block;width:min(68vh,84vw);height:auto;margin:0 auto}
+.qrdlg .qrt{font-size:clamp(20px,3.4vh,34px);font-weight:900;margin:0}.qrdlg .qrurl{font-size:clamp(15px,2.6vh,26px)}

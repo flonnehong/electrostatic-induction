@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <main class="wrap gate" id="loginBox">
@@ -32,10 +32,15 @@
     <div class="stages" id="stages"></div>
     <div class="seg" id="ctl"><button id="prev">◀ 이전 단계로</button><button class="primary" id="next">모두 다음 단계로 ▶</button></div>
   </div>
+  <div class="card qrcard">
+    <button id="qrBig" class="qrbtn" aria-label="학생 접속 QR코드 크게 보기"><img src="images/qr-student.svg" alt="학생 접속 QR코드" width="148" height="148"></button>
+    <div><b>학생 접속 QR코드</b><p class="qrurl">flonnehong.github.io/electrostatic-induction</p><p class="hint">학생이 카메라로 찍으면 접속 신청 화면이 열려요.</p><button class="primary" id="qrOpen">크게 보기</button></div>
+  </div>
   <div class="card"><div class="thead"><b>수락 대기 <span id="nWait"></span></b><button class="primary" id="acceptAll">모두 수락</button></div><div id="wait"></div></div>
   <div class="card"><div class="thead"><b>참여 중 <span id="nOk"></span></b><span class="hint">● 마친 단계 · 초록 점은 지금 접속 중</span></div><div class="tablewrap"><table><thead><tr><th>번호</th><th>지금 단계</th><th>마친 단계</th><th>예상</th><th>퀴즈</th><th></th></tr></thead><tbody id="ok"></tbody></table></div></div>
   <details class="card"><summary>거절·내보낸 학생 <span id="nNo"></span></summary><div id="no"></div></details>
 </main>
+<dialog id="qrDlg" class="qrdlg" aria-labelledby="qrTitle"><p id="qrTitle" class="qrt">카메라로 찍어 접속하세요</p><img src="images/qr-student.svg" alt="학생 접속 QR코드"><p class="qrurl">flonnehong.github.io/electrostatic-induction</p><button class="primary" id="qrClose">닫기</button></dialog>
 <button class="theme-btn" id="themeBtn" aria-label="화면 테마 바꾸기">🌓</button>
 <script src="api.js"></script>
 <script>
@@ -115,6 +120,9 @@ function render(){
     r.append(a, el("td", STAGES[x.c] || ""), p, el("td", x.pr || "–"), el("td", x.sc === "" ? "–" : x.sc + "/6"), g); tb.append(r);
   });
 }
+["qrOpen","qrBig"].forEach(i => $(i).onclick = () => $("qrDlg").showModal());
+$("qrClose").onclick = () => $("qrDlg").close();
+$("qrDlg").onclick = e => { if (e.target === $("qrDlg")) $("qrDlg").close(); };
 if (token) enter();
 })();
 </script>
