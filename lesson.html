@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>정전기 유도 — 수업</title>
+<meta name="description" content="중학교 2학년 과학 Ⅶ. 전기와 자기 - 1. 전기의 발생 - 정전기 유도 수업">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="lesson">
+<div class="cover" id="cover"><div><div class="spin" aria-hidden="true"></div><p class="big2" id="coverText" role="status">접속을 확인하는 중…</p></div></div>
+
+<header class="hero wrap">
+  <div class="unit">중학교 2학년 과학 · Ⅶ. 전기와 자기 · 1. 전기의 발생 · 가까이 하면 생기는 전기</div>
+  <h1>정전기 유도</h1>
+  <p class="lead">마찰하지 않은 금속도 대전체에 끌려올까요? 눈에 보이지 않는 <b>전자의 이동</b>을 모형으로 확인해 봅시다.</p>
+  <p class="goal">학습 목표 · 정전기 유도 현상을 관찰하고, 이를 전기력과 원자 모형을 이용하여 설명할 수 있다.</p>
+  <div class="card" id="me"><span id="meText"></span> <button id="out">로그아웃</button></div>
+</header>
+
+<nav class="steps" aria-label="수업 단계"><div class="wrap">
+  <a href="#intro">① 생각 열기</a><a href="#lab1">② 해 보기</a><a href="#lab2">③ 전자의 이동 모형</a><a href="#lab3">④ 모형 완성하기</a><a href="#quiz">⑤ 확인 문제</a><a href="#wrap">⑥ 정리</a>
+</div></nav>
+
+<main class="wrap">
+<section id="intro">
+  <span class="tag">① 생각 열기 · 5분</span>
+  <h2>전기를 띠지 않은 금속에 대전체를 가까이 하면?</h2>
+  <figure class="fig-photo">
+    <img src="images/cat-static.jpg" alt="온몸에 하얀 스티로폼 조각이 잔뜩 달라붙은 고양이" width="436" height="289">
+    <figcaption>사진: <a href="https://commons.wikimedia.org/wiki/File:Cat_demonstrating_static_cling_with_styrofoam_peanuts.jpg" target="_blank" rel="noopener">Sean McGrath(원본), Black Rainbow 999(편집), 위키미디어 공용</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></figcaption>
+  </figure>
+  <p>고양이 털이 마찰하여 전기를 띠자 스티로폼 조각들이 털에 달라붙었어요. 그렇다면 <b>금속</b>으로 된 캔은 어떨까요?</p>
+  <p>털가죽으로 문지른 플라스틱 빨대는 <b class="neg">(−)전하</b>를 띠어요. 이 빨대를 <b>마찰하지 않은 빈 알루미늄 캔</b>에 닿지 않게 가까이 가져가요.</p>
+  <div class="question">알루미늄 캔은 어떻게 될까?<small>예상을 고르면 우리 반 친구들의 예상을 볼 수 있어요.</small></div>
+  <div class="seg" id="predict"><button data-v="끌려온다">끌려온다</button><button data-v="밀려난다">밀려난다</button><button data-v="변화 없다">변화 없다</button></div>
+  <div class="card" id="statsBox" hidden><b>우리 반의 예상</b> <button id="statsBtn">새로 고침</button><div class="bars" id="bars"></div><div class="msg" id="statsMsg"></div></div>
+  <div class="card"><b>알고 있는 것 확인하기</b>
+    <ul><li>같은 종류의 전하 사이에는 서로 <b>밀어 내는</b> 전기력, 다른 종류의 전하 사이에는 서로 <b>끌어당기는</b> 전기력이 작용한다.</li>
+    <li>원자에는 (+)전하를 띤 <b class="pos">원자핵</b>과 (−)전하를 띤 <b class="neg">전자</b>가 있고, 두 전하의 양이 같아 전기적으로 중성이다.</li></ul></div>
+</section>
+
+<section id="lab1">
+  <span class="tag">② 해 보기 · 8분</span>
+  <h2>대전체를 가까이 한 알루미늄 캔 관찰하기</h2>
+  <figure>
+    <img src="images/can-charged-straw.jpg" alt="책상 위에 눕혀 놓은 빈 알루미늄 캔에 (−)전하로 대전된 빨대를 가까이 가져가는 손" width="552" height="undefined">
+    <figcaption>실험 모습 (비상교육 중학교 과학 2 교과서 232쪽 사진을 수업용으로 편집)</figcaption>
+  </figure>
+  <div class="card"><b>준비물</b> 빈 알루미늄 캔, 플라스틱 빨대, 털가죽
+    <ol><li>책상 위에 빈 알루미늄 캔을 눕혀 놓는다.</li><li>빨대를 털가죽으로 여러 번 마찰한다.</li><li>마찰하여 <b class="neg">(−)전하로 대전된</b> 빨대를 빈 알루미늄 캔에 가까이 한다. 이때 빨대와 캔을 나란히 하고, 빨대가 캔에 <b>닿지 않게</b> 한다.</li></ol></div>
+  <p><b>관찰 결과</b> 알루미늄 캔은 어떻게 되었나요?</p>
+  <div class="seg" id="observe"><button data-v="끌려왔다">끌려왔다</button><button data-v="밀려났다">밀려났다</button><button data-v="변화 없었다">변화 없었다</button></div>
+  <div class="msg" id="obsMsg"></div>
+  <div class="card"><b>이야기해 보기</b>
+    <p><b class="neg">(−)전하를 띤 빨대</b>를 가까이 할 때 빈 알루미늄 캔에서 빨대와 <b>가까운 부분</b>은 어떤 전하를 띠는지 전기력과 관련지어 이야기해 보자.</p>
+    <details><summary>예시 답안</summary><p>빈 알루미늄 캔이 (−)전하를 띤 빨대에 의해 끌어당기는 방향의 전기력을 받았으므로, 빨대와 가까운 부분은 <b class="pos">(+)전하</b>를 띤다. 왜 (+)전하를 띠게 되었는지는 ③의 전자 이동 모형으로 확인해 봅시다.</p></details></div>
+</section>
+
+<section id="lab2">
+  <span class="tag">③ 모형 탐구 · 12분</span>
+  <h2>캔 속에서 무슨 일이 일어날까?</h2>
+  <p>막대를 끌거나 아래 조절 막대로 대전체를 캔에 가까이 해 보세요. <b class="pos">⊕ 원자핵</b>과 <b class="neg">⊖ 전자</b> 중 무엇이 움직이나요?</p>
+  <canvas id="cvM" aria-label="알루미늄 캔에 대전체를 가까이 할 때 전자가 이동하는 모형"></canvas>
+  <div class="controls"><div class="seg" id="rodType"><button data-v="0">대전체 없음</button><button data-v="-1" class="on">(−)대전체</button><button data-v="1">(+)대전체</button></div></div>
+  <div class="controls">
+    <div class="ctrl"><label for="gap">대전체</label><span class="hint">멀리</span><input type="range" id="gap" min="0" max="100" value="0"><span class="hint">가까이</span></div>
+    <label class="chk"><input type="checkbox" id="free">캔을 움직이게 하기</label>
+    <button id="mReset">처음으로</button>
+  </div>
+  <ul class="todo"><li id="tdN">☐ (−)대전체를 캔 가까이 가져가기</li><li id="tdP">☐ (+)대전체를 캔 가까이 가져가기</li></ul>
+  <div class="zones" aria-live="off"><div class="zone" id="zL"></div><div class="zone" id="zR"></div></div>
+  <p class="hint">※ 원자핵과 전자의 수·크기는 이해를 돕기 위해 아주 간단히 나타낸 것이에요. 실제 캔에는 셀 수 없이 많은 원자가 있어요.</p>
+  <div class="card"><b>모형에서 찾아보기</b>
+    <ol><li>(−)대전체를 가까이 하면 전자는 대전체에서 <b>먼 쪽</b>과 <b>가까운 쪽</b> 중 어디로 이동하나요?</li>
+    <li>대전체와 가까운 쪽에도 전자가 남아 있나요? 그런데도 왜 (+)전하를 띨까요?</li>
+    <li>캔 전체의 전자 수는 달라졌나요? 대전체를 다시 멀리 하면 어떻게 되나요?</li></ol>
+    <details><summary>예시 답안</summary><p>1. 같은 종류의 전하 사이에는 밀어 내는 전기력이 작용하므로, 전자는 (−)대전체에서 <b>먼 쪽</b>으로 이동한다.</p><p>2. 남아 있다. 하지만 (−)전하의 양이 (+)전하의 양보다 <b>적어져서</b> (+)전하를 띤다.</p><p>3. 전체 전자 수는 그대로이다. 대전체를 멀리 하면 전자가 다시 고르게 퍼져 어느 쪽도 전하를 띠지 않는다.</p></details></div>
+  <div class="concept"><p><b class="key">정전기 유도</b>: 전기를 띠지 않은 물체에 대전체를 가까이 할 때, 대전체와 <b>가까운 쪽은 다른 종류</b>의 전하를 띠고 <b>먼 쪽은 같은 종류</b>의 전하를 띠는 현상</p><p>금속에는 비교적 자유롭게 움직일 수 있는 전자가 많다. 정전기 유도가 일어날 때 <b>원자핵은 움직이지 않고 전자만</b> 이동한다.</p></div>
+  <details class="card"><summary>더 알아보기: 종이나 고무처럼 금속이 아닌 물체는?</summary>
+    <p>대전된 풍선에 종잇조각이 달라붙는 것도 정전기 유도예요. 종이에는 자유롭게 이동하는 전자가 거의 없지만, <b>원자 안에서 전자가 한쪽으로 치우쳐요.</b></p>
+    <canvas id="cvP" aria-label="종이의 원자 안에서 전자가 한쪽으로 치우치는 모형"></canvas>
+    <div class="controls"><div class="seg" id="pType"><button data-v="0" class="on">대전체 없음</button><button data-v="-1">(−)대전체</button><button data-v="1">(+)대전체</button></div></div></details>
+</section>
+
+<section id="lab3">
+  <span class="tag">④ 활동 · 10분</span>
+  <h2>전하 모형 완성하기</h2>
+  <p>캔에는 원자핵 8개와 전자 8개가 있어요. 버튼으로 <b>전자만</b> 옮겨 세 가지 경우를 나타내 보세요. 세 번째는 빨대를 문지른 <b>털가죽</b>을 가까이 한 경우예요.</p>
+  <div id="scenes"></div>
+</section>
+
+<section id="quiz">
+  <span class="tag">⑤ 확인 문제 · 6분</span>
+  <h2>스스로 확인하기</h2>
+  <div class="quiz" id="quizBox"></div><p class="score" id="quizScore"></p>
+  <div class="card"><b>사고력</b> 플라스틱 빨대를 털가죽으로 여러 번 마찰한 후 <b>털가죽</b>을 빈 알루미늄 캔에 가까이 하면 어떻게 될지 전자의 이동으로 설명해 보자.
+    <textarea id="essay" maxlength="500" placeholder="털가죽이 띠는 전하 → 전자의 이동 → 가까운 쪽의 전하 → 캔의 움직임"></textarea>
+    <details><summary>예시 답안</summary><p>털가죽은 (+)전하로 대전된다. (+)전하를 띤 털가죽을 캔에 가까이 하면 캔의 전자가 털가죽과 가까운 쪽으로 이동한다. 그 결과 가까운 쪽이 (−)전하를 띠게 되어 캔이 털가죽 쪽으로 끌려온다.</p></details></div>
+</section>
+
+<section id="wrap">
+  <span class="tag">⑥ 정리 · 4분</span>
+  <h2>공기 청정기 필터에 미세 먼지가 달라붙는 까닭은?</h2>
+  <p>공기 청정기의 필터는 <b>대전</b>되어 있어요. 오늘 배운 내용으로 설명해 봅시다.</p>
+  <div class="card"><label for="final"><b>나의 설명</b></label><textarea id="final" maxlength="500" placeholder="'정전기 유도', '전기력'이라는 말을 넣어 써 보세요."></textarea>
+  <details><summary>예시 답안</summary><p>전기를 띠지 않은 미세 먼지가 대전된 필터 가까이 지나가면 정전기 유도가 일어나, 필터와 가까운 쪽이 필터와 다른 종류의 전하를 띤다. 따라서 끌어당기는 전기력을 받아 필터에 달라붙는다.</p></details></div>
+  <div class="card"><label for="ask"><b>더 궁금한 점</b> <span class="hint">(없으면 비워 두세요)</span></label><textarea id="ask" maxlength="300"></textarea></div>
+  <div class="card"><b>처음 예상</b> <span id="echo" class="hint"></span></div>
+  <button class="primary" id="finish">활동 마치기</button> <span class="msg" id="finMsg" role="status"></span>
+  <details class="card"><summary>수업 흐름 (45분)</summary><div class="tablewrap"><table><thead><tr><th>단계</th><th>시간</th><th>활동</th></tr></thead><tbody>
+    <tr><td>① 생각 열기</td><td>5분</td><td>예상 → 우리 반 예상 확인</td></tr><tr><td>② 실험</td><td>8분</td><td>빨대와 알루미늄 캔 관찰</td></tr><tr><td>③ 모형 탐구</td><td>12분</td><td>전자의 이동 관찰 → 정전기 유도 개념</td></tr><tr><td>④ 모형 완성</td><td>10분</td><td>세 가지 경우의 전하 분포 나타내기</td></tr><tr><td>⑤ 확인 문제</td><td>6분</td><td>6문항, 사고력</td></tr><tr><td>⑥ 정리</td><td>4분</td><td>미세 먼지가 달라붙는 까닭</td></tr></tbody></table></div></details>
+</section>
+</main>
+<footer class="wrap">중학교 2학년 과학 Ⅶ. 전기와 자기 — 1. 전기의 발생 · 정전기 유도</footer>
+<div class="flow"><div class="wrap"><div class="t"><b id="flowText" role="status"></b><span id="save"></span></div><button id="stay" hidden>조금 더 보기</button><button class="primary" id="go" hidden>다음 단계로 ▶</button></div></div>
+<button class="theme-btn" id="themeBtn" aria-label="화면 테마 바꾸기">🌓</button>
+
+<script src="api.js"></script>
+<script>
+(() => {
+"use strict";
+const $ = id => document.getElementById(id);
+const { ls, today, post, forget } = ESI, demo = new URLSearchParams(location.search).get("demo") === "1", me = demo ? { cls:0,num:0,key:"demo" } : ESI.me();
+if (!me){ location.replace("index.html"); return; }
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- 색·테마 ---------- */
+let C = {}; const redraw = [];
+function colors(){ const s=getComputedStyle(document.documentElement); ["ink","ink-2","line","canvas","accent","pos","neg","metal","metal-2"].forEach(k=>C[k]=s.getPropertyValue("--"+k).trim()); redraw.forEach(f=>f()); }
+ESI.theme($("themeBtn"),()=>colors());
+colors(); try{ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",colors); }catch(e){}
+
+/* ---------- 학생 기록과 전송 ---------- */
+const TEXTS=["essay","final","ask"];
+const blank=()=>({ cls:me.cls,num:me.num,key:me.key,day:today(),predict:"",observe:"",m:[null,null,null],quiz:{},essay:"",final:"",ask:"",x:{n:false,p:false},finish:false,cur:0 });
+let st=blank();
+if(!demo) try{ const s=JSON.parse(ls.get("st")||"null"); if(s && s.key===me.key && s.cls===me.cls && s.num===me.num && s.day===today() && Array.isArray(s.m) && s.quiz) st=Object.assign(blank(),s); else { ls.del("st"); ls.del("dirty"); } }catch(e){ ls.del("st"); ls.del("dirty"); }
+let dirty=!demo&&ls.get("dirty")==="1", sending=false, timer=null, ver=0, ready=false;
+const say=t=>{ $("save").textContent=t; };
+function payload(){
+  const a=Object.keys(st.quiz), f=doneFlags(), p={ a:"save",cls:me.cls,num:me.num,key:me.key,predict:st.predict,observe:st.observe,essay:st.essay,final:st.final,ask:st.ask,cur:st.cur,done:f.reduce((v,d,i)=>v|(d?1<<i:0),0) };
+  st.m.forEach((x,i)=>p["m"+i]=x?`${x.ok?"정답":"수정 필요"} · ${x.desc} · 확인 ${x.tries}번`:"");
+  p.answers=Q.map((q,i)=>st.quiz[i]===undefined?"-":st.quiz[i]+1).join(" ");
+  p.score=a.length===Q.length?String(Q.filter((q,i)=>st.quiz[i]===q.a).length):"";
+  return p;
+}
+function changed(wait=1500){ if(demo){ flow(); return; } ls.set("st",JSON.stringify(st)); ver++; dirty=true; ls.set("dirty","1"); clearTimeout(timer); timer=setTimeout(send,wait); flow(); }
+async function send(){
+  if(demo||!ready||!dirty||sending) return;
+  sending=true; const v=ver; say("저장하는 중…");
+  let again=15000;
+  try{
+    const j=await post(payload());
+    if(j.ok){ if(v===ver){ dirty=false; ls.del("dirty"); } again=800; say("✓ 선생님께 저장됨"); }
+    else if(j.error==="notaccepted"){ say("접속을 다시 확인해요."); check(); }
+    else { again=j.error==="busy"?3000:15000; say("아직 저장되지 않았어요. 잠시 뒤 다시 보내요."); }
+  }catch(e){ say("아직 저장되지 않았어요. 잠시 뒤 다시 보내요."); }
+  sending=false;
+  if(dirty){ clearTimeout(timer); timer=setTimeout(send,again+Math.random()*3000); }
+}
+addEventListener("online",send);
+$("out").onclick=()=>{ if(demo){ location.href="teacher.html"; return; } if(!confirm(dirty?"아직 선생님께 저장되지 않은 내용이 있어요. 이 기기에서 기록을 지우고 로그아웃할까요?":"이 기기에서 기록을 지우고 로그아웃할까요?")) return; clearTimeout(timer); forget(); location.replace("index.html"); };
+TEXTS.forEach(id=>$(id).addEventListener("input",()=>{ st[id]=$(id).value; changed(4000); }));
+
+function seg(id,cb){ [...$(id).querySelectorAll("button")].forEach(b=>b.onclick=()=>cb(b.dataset.v)); }
+function mark(id,v){ [...$(id).querySelectorAll("button")].forEach(b=>{ const on=b.dataset.v===String(v); b.classList.toggle("on",on); b.setAttribute("aria-pressed",on); }); }
+seg("predict",v=>{ st.predict=v; changed(300); renderTop(); setTimeout(stats,3500); });
+seg("observe",v=>{ st.observe=v; changed(800); renderTop(); });
+$("statsBtn").onclick=stats;
+async function stats(){
+  const m=$("statsMsg"); m.className="msg"; if(demo){ m.textContent="미리 보기에서는 우리 반의 예상을 불러오지 않아요."; return; } m.textContent="불러오는 중…";
+  try{ const j=await post({ a:"stats",cls:me.cls,num:me.num,key:me.key }); if(!j.ok) throw 0;
+    $("bars").innerHTML=Object.entries(j.predict).map(([k,n])=>`<div class="bar"><span>${k}</span><i style="width:${j.total?n/j.total*100:0}%"></i><b>${n}명</b></div>`).join(""); m.textContent="";
+  }catch(e){ m.textContent="지금은 불러올 수 없어요. 잠시 뒤 새로 고침을 눌러 보세요."; }
+}
+function renderTop(){
+  $("meText").textContent=demo?"미리 보기 (저장되지 않고, 모든 단계가 열려 있어요)":`2학년 ${me.cls}반 ${me.num}번`;
+  mark("predict",st.predict); mark("observe",st.observe); $("statsBox").hidden=!st.predict;
+  $("echo").textContent=st.predict?`"${st.predict}" ${st.predict==="끌려온다"?"→ 예상이 맞았어요!":"→ 실제로는 끌려와요. 까닭을 설명할 수 있나요?"}`:"(① 에서 고른 예상이 나타나요)";
+  const o=$("obsMsg"); o.className="msg";
+  o.textContent=!st.observe?"":st.observe==="끌려왔다"?"캔이 빨대 쪽으로 끌려왔어요. 전기를 띠지 않은 캔이 왜 끌려올까요? ③에서 알아봅시다.":"그럴 수 있어요. 빨대를 더 많이 문지르거나 캔에 더 가까이 해 보세요. (습한 날에는 잘 안 될 수 있어요)";
+}
+function render(){ renderTop(); TEXTS.forEach(id=>$(id).value=st[id]); $("bars").innerHTML=""; buildScenes(); buildQuiz(); }
+
+/* ---------- 그리기 도구 ---------- */
+function setup(cv,W,H){ const d=Math.min(devicePixelRatio||1,2); cv.width=W*d; cv.height=H*d; const c=cv.getContext("2d"); c.setTransform(d,0,0,d,0,0); return c; }
+function text(c,t,x,y,col,size=15,w=500,al="center"){ c.fillStyle=col; c.font=`${w} ${size}px "Noto Sans KR",system-ui,sans-serif`; c.textAlign=al; c.textBaseline="middle"; c.fillText(t,x,y); }
+function rr(c,x,y,w,h,r){ c.beginPath(); c.moveTo(x+r,y); c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r); c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath(); }
+function ball(c,x,y,r,col,sign){ c.fillStyle=col; c.beginPath(); c.arc(x,y,r,0,7); c.fill(); c.strokeStyle="#fff"; c.lineWidth=2; c.beginPath(); c.moveTo(x-r*.5,y); c.lineTo(x+r*.5,y); if(sign>0){ c.moveTo(x,y-r*.5); c.lineTo(x,y+r*.5); } c.stroke(); }
+function arrow(c,x,y,dx,col){ c.strokeStyle=c.fillStyle=col; c.lineWidth=2; c.beginPath(); c.moveTo(x,y); c.lineTo(x+dx,y); c.stroke(); const s=Math.sign(dx); c.beginPath(); c.moveTo(x+dx+s*5,y); c.lineTo(x+dx-s*2,y-4); c.lineTo(x+dx-s*2,y+4); c.fill(); }
+const PCOL="#cf2f62", NCOL="#2265c9";
+
+/* ---------- ③ 전자 이동 모형 ---------- */
+const M=(()=>{
+  const cv=$("cvM"),W=700,H=360,c=setup(cv,W,H), CW=380,CH=200,CY=80,CX0=24,ROD=36, COLS=8,ROWS=4, FAR=655, MIN=14;
+  const s={ type:-1,rod:FAR,shift:0,vel:0,free:false,drag:false,t:0 };
+  const el=[]; for(let i=0;i<COLS;i++) for(let j=0;j<ROWS;j++){ const u=((i+.5)+(j-1.5)*.2)/COLS; el.push({ home:u,u,v:(j+.5)/ROWS,du:0,ph:i*1.7+j*2.9 }); }
+  const right=()=>CX0+s.shift+CW, gap=()=>s.rod-ROD/2-right(), nearest=()=>right()+MIN+ROD/2;
+  const power=()=>s.type===0?0:Math.max(0,Math.min(1,(225-gap())/(225-MIN)));
+  const target=u=>{ const k=1+power(); return s.type<0?Math.pow(u,k):s.type>0?1-Math.pow(1-u,k):u; };
+  function setRod(x){ s.rod=Math.max(nearest(),Math.min(FAR,x)); slider(); }
+  function slider(){ const a=FAR-nearest(); $("gap").value=a>0?Math.round((FAR-s.rod)/a*100):100; }
+  function step(dt){
+    s.t+=dt;
+    if(ready&&s.type!==0&&power()>.85){ const k=s.type<0?"n":"p"; if(!st.x[k]){ st.x[k]=true; todo(); changed(1500); } }
+    el.forEach(e=>{ const g=target(e.home)-e.u; const mv=g*Math.min(1,dt*2.6); e.u+=mv; e.du=g; });
+    if(s.free&&s.type!==0&&power()>.25){ s.vel+=power()*130*dt; } else s.vel*=Math.max(0,1-dt*4);
+    if(s.free){ const room=gap()-MIN; const d=Math.min(Math.max(0,room),s.vel*dt); s.shift+=d; if(room<=0.5) s.vel=0; if(d>0) slider(); }
+  }
+  function count(){ let l=0; el.forEach(e=>{ if(e.u<.5) l++; }); return [l,el.length-l]; }
+  const netTxt=n=>n===0?`<b class="net">전하를 띠지 않음</b>`:n>0?`<b class="net pos">(+)전하를 띤다</b>`:`<b class="net neg">(−)전하를 띤다</b>`;
+  let lastKey="";
+  function panel(){
+    const [l,r]=count(), half=COLS*ROWS/2, on=s.type!==0&&power()>0, key=[l,r,on].join();
+    if(key===lastKey) return; lastKey=key;
+    $("zL").innerHTML=`왼쪽${on?" (대전체와 <b>먼 쪽</b>)":""}<br><span class="pos">원자핵 (+) ${half}개</span> · <span class="neg">전자 (−) ${l}개</span>${netTxt(half-l)}`;
+    $("zR").innerHTML=`오른쪽${on?" (대전체와 <b>가까운 쪽</b>)":""}<br><span class="pos">원자핵 (+) ${half}개</span> · <span class="neg">전자 (−) ${r}개</span>${netTxt(half-r)}`;
+  }
+  function draw(){
+    c.clearRect(0,0,W,H); const x0=CX0+s.shift;
+    c.fillStyle=C["line"]; c.fillRect(0,CY+CH+22,W,3);
+    if(s.shift>3){ c.save(); c.setLineDash([6,6]); c.strokeStyle=C["metal-2"]; rr(c,CX0,CY,CW,CH,26); c.stroke(); c.restore(); }
+    const g=c.createLinearGradient(0,CY,0,CY+CH); g.addColorStop(0,C.metal); g.addColorStop(.5,C.canvas); g.addColorStop(1,C["metal-2"]);
+    rr(c,x0,CY,CW,CH+20,26); c.fillStyle=g; c.fill(); c.strokeStyle=C["metal-2"]; c.lineWidth=3; c.stroke();
+    c.save(); c.setLineDash([5,5]); c.strokeStyle=C["metal-2"]; c.lineWidth=2; c.beginPath(); c.moveTo(x0+CW/2,CY+4); c.lineTo(x0+CW/2,CY+CH+16); c.stroke(); c.restore();
+    text(c,"알루미늄 캔 (마찰하지 않음)",x0+CW/2,CY-18,C.ink,16,700);
+    const px=u=>x0+16+u*(CW-32), py=v=>CY+10+v*CH;
+    for(let i=0;i<COLS;i++) for(let j=0;j<ROWS;j++) ball(c,px((i+.5)/COLS),py((j+.5)/ROWS)-10,13,PCOL,1);
+    el.forEach(e=>{ const jx=still?0:Math.sin(s.t*3+e.ph)*1.6, jy=still?0:Math.cos(s.t*2.6+e.ph)*1.6, x=px(e.u)+jx, y=py(e.v)+13+jy;
+      if(Math.abs(e.du)>.02) arrow(c,x+Math.sign(e.du)*11,y,Math.sign(e.du)*10,C.neg); ball(c,x,y,10,NCOL,-1); });
+    if(s.type!==0){
+      const n=s.type<0, rx=s.rod-ROD/2; rr(c,rx,40,ROD,280,16); c.fillStyle=n?"#4f86d8":"#dd6a90"; c.fill();
+      for(let k=0;k<7;k++) ball(c,s.rod,64+k*38,10,n?NCOL:PCOL,s.type);
+      text(c,n?"(−)대전체":"(+)대전체",Math.min(s.rod,W-56),22,n?C.neg:C.pos,16,900);
+      if(power()>.3&&Math.abs(el[0].du)<.2){ arrow(c,right()-2,CY+CH/2+10,Math.min(34,Math.max(8,gap()-12)),C.accent); }
+    } else text(c,"대전체 없음",580,180,C["ink-2"],16,500);
+    text(c,"전체: 원자핵 32개, 전자 32개 (변하지 않아요)",16,H-16,C["ink-2"],17,500,"left");
+    panel();
+  }
+  function reset(){ s.rod=FAR; s.shift=0; s.vel=0; s.free=false; $("free").checked=false; $("gap").value=0; }
+  $("gap").oninput=e=>{ const a=FAR-nearest(); s.rod=FAR-a*e.target.value/100; };
+  $("free").onchange=e=>{ s.free=e.target.checked; if(!s.free){ s.shift=0; s.vel=0; slider(); } };
+  $("mReset").onclick=reset;
+  seg("rodType",v=>{ s.type=+v; mark("rodType",v); if(s.free){ s.shift=0; s.vel=0; } slider(); });
+  const pt=e=>{ const r=cv.getBoundingClientRect(),k=W/r.width; return { x:(e.clientX-r.left)*k,y:(e.clientY-r.top)*k }; };
+  const onRod=p=>s.type!==0&&Math.abs(p.x-s.rod)<46;
+  cv.addEventListener("touchstart",e=>{ if(onRod(pt(e.touches[0]))) e.preventDefault(); },{passive:false});
+  cv.addEventListener("pointerdown",e=>{ if(onRod(pt(e))){ s.drag=true; try{cv.setPointerCapture(e.pointerId);}catch(x){} } });
+  cv.addEventListener("pointermove",e=>{ const p=pt(e); cv.style.cursor=onRod(p)?"grab":""; if(s.drag) setRod(p.x); });
+  ["pointerup","pointercancel"].forEach(n=>cv.addEventListener(n,()=>s.drag=false));
+  redraw.push(draw); draw();
+  return { cv,step,draw };
+})();
+let vis=true, last=performance.now();
+if("IntersectionObserver" in window) new IntersectionObserver(es=>es.forEach(e=>vis=e.isIntersecting)).observe(M.cv);
+(function loop(t){ const dt=Math.max(0,Math.min(.05,((t||performance.now())-last)/1000)); last=t||performance.now(); if(vis){ M.step(dt); M.draw(); } requestAnimationFrame(loop); })();
+
+/* 종이(금속이 아닌 물체) */
+(()=>{ const cv=$("cvP"),W=900,H=260,c=setup(cv,W,H); let type=0;
+  function draw(){ c.clearRect(0,0,W,H); rr(c,90,40,600,190,14); c.fillStyle=C.metal; c.fill(); c.strokeStyle=C["metal-2"]; c.lineWidth=2; c.stroke(); text(c,"종이 (원자 모형)",390,20,C.ink,16,700);
+    for(let i=0;i<6;i++) for(let j=0;j<2;j++){ const x=140+i*100,y=90+j*90,d=type*12; c.strokeStyle=C["ink-2"]; c.lineWidth=1.5; c.setLineDash([4,4]); c.beginPath(); c.arc(x,y,36,0,7); c.stroke(); c.setLineDash([]); ball(c,x,y,11,PCOL,1); [[-22,0],[22,0]].forEach(([ox,oy])=>ball(c,x+ox+d,y+oy,8,NCOL,-1)); }
+    if(type){ rr(c,770,30,36,210,16); c.fillStyle=type<0?"#4f86d8":"#dd6a90"; c.fill(); for(let k=0;k<5;k++) ball(c,788,56+k*40,10,type<0?NCOL:PCOL,type); text(c,type<0?"(−)대전체":"(+)대전체",788,14,type<0?C.neg:C.pos,15,900); } }
+  seg("pType",v=>{ type=+v; mark("pType",v); draw(); }); redraw.push(draw); draw(); })();
+
+/* ---------- ④ 모형 완성하기 ---------- */
+const SC=[ { t:"1. 대전체가 없을 때",rod:"z",r:"대전체 없음",far:0,near:0,move:"움직이지 않는다" },
+           { t:"2. (−)전하를 띤 빨대를 오른쪽에 가까이 할 때",rod:"n",r:"−",far:-1,near:1,move:"끌려온다" },
+           { t:"3. (+)전하를 띤 털가죽을 오른쪽에 가까이 할 때",rod:"p",r:"+",far:1,near:-1,move:"끌려온다" } ];
+const CH=["","(+)전하","(−)전하","띠지 않음"], chOf=n=>n===0?"띠지 않음":n>0?"(+)전하":"(−)전하";
+function buildScenes(){
+  const box=$("scenes"); box.innerHTML="";
+  SC.forEach((sc,i)=>{
+    const sv=st.m[i], w=Object.assign({ l:4,a:"",b:"",mv:"",tries:0 },sv&&sv.w||{});
+    const d=document.createElement("div"); d.className="card scene";
+    const opt=(arr,v)=>arr.map(x=>`<option value="${x}"${x===v?" selected":""}>${x||"선택"}</option>`).join("");
+    d.innerHTML=`<b>${sc.t}</b><div class="row"><div class="can"><div class="L"></div><div class="R"></div></div><div class="rod ${sc.rod}">${sc.r}</div></div>
+      <div class="controls"><button class="toL">◀ 전자 1개 왼쪽으로</button><button class="toR">전자 1개 오른쪽으로 ▶</button></div>
+      <div class="controls"><label class="ctrl">왼쪽 <select class="sa">${opt(CH,w.a)}</select></label><label class="ctrl">오른쪽 <select class="sb">${opt(CH,w.b)}</select></label><label class="ctrl">캔은 <select class="sm">${opt(["","끌려온다","밀려난다","움직이지 않는다"],w.mv)}</select></label><button class="primary ck">확인</button></div><div class="msg"></div>`;
+    const q=s=>d.querySelector(s), m=q(".msg");
+    const half=n=>`<div class="chs">${'<span class="c p">+</span>'.repeat(4)}</div><div class="chs">${'<span class="c e">−</span>'.repeat(n)}</div><span class="hint">전자 ${n}개</span>`;
+    const show=()=>{ q(".L").innerHTML=half(w.l); q(".R").innerHTML=half(8-w.l); q(".toL").disabled=w.l===8; q(".toR").disabled=w.l===0; };
+    const edit=()=>{ w.a=q(".sa").value; w.b=q(".sb").value; w.mv=q(".sm").value; m.textContent=""; };
+    q(".toL").onclick=()=>{ w.l++; edit(); show(); }; q(".toR").onclick=()=>{ w.l--; edit(); show(); };
+    [".sa",".sb",".sm"].forEach(s=>q(s).onchange=edit);
+    const judge=()=>{
+      const L=4-w.l, R=w.l-4;  // (+)개수 - 전자 개수
+      if(Math.sign(L)!==sc.far) return i===0?"대전체가 없으면 전자가 고르게 퍼져 있어요.":"전자는 (−)전하를 띠어요. 대전체와 전자 사이에 밀어 내는 힘과 끌어당기는 힘 중 무엇이 작용할까요?";
+      if(w.a!==chOf(L)||w.b!==chOf(R)) return "원자핵의 수와 전자의 수를 비교해서 양쪽의 전하를 다시 골라 보세요.";
+      if(w.mv!==sc.move) return i===0?"대전체가 없으면 캔에 전기력이 작용할까요?":"대전체와 가까운 쪽은 대전체와 같은 종류, 다른 종류 중 어느 전하인가요?";
+      return "";
+    };
+    q(".ck").onclick=()=>{
+      edit();
+      if(!w.a||!w.b||!w.mv){ m.textContent="세 칸을 모두 골라 보세요."; m.className="msg"; return; }
+      w.tries++; const bad=judge();
+      m.textContent=bad?"❌ "+bad:"⭕ 맞았어요!"+(i&&(w.l===8||w.l===0)?" 다만 실제로는 전자가 모두 옮겨 가지 않고 일부만 이동해요.":""); m.className="msg "+(bad?"bad":"ok");
+      st.m[i]={ ok:!bad,tries:w.tries,desc:`전자 왼${w.l} 오${8-w.l}, 왼쪽 ${w.a}, 오른쪽 ${w.b}, ${w.mv}`,w:Object.assign({},w) }; changed(1000);
+    };
+    if(sv){ m.textContent=sv.ok?"⭕ 맞았어요!":"다시 확인해 보세요."; m.className="msg "+(sv.ok?"ok":""); }
+    show(); box.appendChild(d);
+  });
+}
+
+/* ---------- ⑤ 확인 문제 ---------- */
+const Q=[
+ {q:"전기를 띠지 않은 물체에 대전체를 가까이 할 때, 가까운 쪽은 대전체와 다른 종류의 전하를, 먼 쪽은 같은 종류의 전하를 띠는 현상은?",c:["마찰 전기","정전기 유도","방전","전류"],a:1,e:"대전체를 가까이 하기만 해도 나타나는 이 현상을 정전기 유도라고 해요."},
+ {q:"알루미늄 캔에 (−)대전체를 가까이 할 때 캔의 전자는?",c:["대전체에서 먼 쪽으로 이동한다","대전체와 가까운 쪽으로 이동한다","캔에서 대전체로 옮겨 간다","움직이지 않는다"],a:0,e:"전자와 (−)대전체는 같은 종류의 전하라서 서로 밀어 내요."},
+ {q:"금속에서 정전기 유도가 일어날 때 이동하는 것은?",c:["원자핵","원자핵과 전자","원자 전체","전자"],a:3,e:"원자핵은 움직이지 않고 전자만 이동해요."},
+ {q:"(−)대전체를 가까이 한 금속에서, 대전체와 먼 쪽이 (−)전하를 띠는 까닭은?",c:["(+)전하가 모두 사라져서","전자가 새로 만들어져서","(−)전하의 양이 (+)전하의 양보다 많아져서","원자핵이 가까운 쪽으로 이동해서"],a:2,e:"먼 쪽에도 (+)전하가 그대로 있지만, 전자가 몰려와 (−)전하의 양이 더 많아졌어요."},
+ {q:"알루미늄 캔에 (+)대전체를 닿지 않게 가까이 하면 캔은?",c:["밀려난다","움직이지 않는다","끌려온다","끌려오다가 밀려난다"],a:2,e:"가까운 쪽이 (−)전하를 띠므로 (+)대전체에 끌려와요."},
+ {q:"캔에 닿지 않게 가까이 했던 대전체를 다시 멀리 치우면 캔은?",c:["계속 (+)전하를 띤다","전자가 다시 고르게 퍼져 전하를 띠지 않는다","계속 (−)전하를 띤다","전자가 모두 사라진다"],a:1,e:"캔의 전자 수는 변하지 않았으므로 대전체를 치우면 처음 상태로 돌아가요."}];
+function buildQuiz(){
+  const box=$("quizBox"); box.innerHTML="";
+  Q.forEach((it,i)=>{
+    const d=document.createElement("div"); d.className="q card"; const p=document.createElement("p"); p.textContent=`${i+1}. ${it.q}`; const ch=document.createElement("div"); ch.className="choices"; const fb=document.createElement("div"); fb.className="fb";
+    const reveal=j=>{ ch.children[j].classList.add(j===it.a?"correct":"wrong"); ch.children[it.a].classList.add("correct"); fb.textContent=(j===it.a?"⭕ 정답! ":"❌ 아쉬워요. ")+it.e; };
+    it.c.forEach((t,j)=>{ const b=document.createElement("button"); b.textContent=`${"①②③④"[j]} ${t}`; b.onclick=()=>{ if(st.quiz[i]!==undefined) return; st.quiz[i]=j; reveal(j); score(); changed(2500); }; ch.appendChild(b); });
+    d.append(p,ch,fb); box.appendChild(d); if(st.quiz[i]!==undefined) reveal(st.quiz[i]);
+  }); score();
+}
+function score(){ const n=Object.keys(st.quiz).length, ok=Q.filter((q,i)=>st.quiz[i]===q.a).length; $("quizScore").textContent=!n?"":n===Q.length?`${Q.length}문제 중 ${ok}문제 맞혔어요!`:`${n}/${Q.length} 풀이 중 · 맞힌 문제 ${ok}개`; }
+
+function todo(){ [["tdN","n","(−)"],["tdP","p","(+)"]].forEach(([i,k,t])=>{ $(i).textContent=(st.x[k]?"☑ ":"☐ ")+t+"대전체를 캔 가까이 가져가기"; $(i).className=st.x[k]?"y":""; }); }
+
+/* ---------- 단계 진행 ---------- */
+const IDS=["intro","lab1","lab2","lab3","quiz","wrap"], nav=[...document.querySelectorAll("nav.steps a")];
+const NEED=["예상을 하나 골라 보세요.","실험을 하고 관찰 결과를 골라 보세요.","(−)대전체와 (+)대전체를 모두 캔 가까이 가져가 보세요.","세 가지 모형을 모두 완성해 보세요.","여섯 문제를 모두 풀어 보세요.","나의 설명을 쓰고 [활동 마치기]를 눌러 보세요."];
+let ctl={ mode:"auto",stage:0,push:0,end:false }, first=true, count=null, left=0, held=-1;
+function doneFlags(){ return [!!st.predict,!!st.observe,st.x.n&&st.x.p,st.m.every(x=>x&&(x.ok||x.tries>=3)),Object.keys(st.quiz).length===Q.length,st.finish]; }
+function limit(){ if(demo) return 5; const f=doneFlags(); let k=0; while(k<5&&f[k]) k++; return Math.min(5,Math.max(ctl.mode==="teacher"?ctl.stage:k,ctl.push)); }
+function stopCount(){ clearInterval(count); count=null; }
+function view(i,top=true){ const was=st.cur; stopCount(); st.cur=i; IDS.forEach((id,k)=>$(id).hidden=k!==i); if(top) $(IDS[i]).scrollIntoView({block:"start",behavior:"instant"}); if(was!==i&&ready) changed(600); else flow(); }
+function flow(){
+  if(!Q) return;
+  const f=doneFlags(), L=limit(), i=st.cur;
+  nav.forEach((a,k)=>{ a.classList.toggle("on",k===i); a.classList.toggle("lock",k>L); a.classList.toggle("fin",f[k]); a.setAttribute("aria-disabled",k>L); if(k===i) a.setAttribute("aria-current","step"); else a.removeAttribute("aria-current"); });
+  const can=i<L, t=$("flowText"); $("go").hidden=!can; $("stay").hidden=count===null;
+  if(ctl.end) t.textContent="수업이 끝났어요. 수고했어요!";
+  else if(f[i]&&i===5) t.textContent="모든 활동을 마쳤어요. 수고했어요!";
+  else if(count!==null) t.textContent=`이 단계를 마쳤어요! ${left}초 뒤 다음 단계로 넘어가요.`;
+  else if(f[i]&&!can) t.textContent="이 단계를 마쳤어요. 선생님이 넘길 때까지 기다려 주세요.";
+  else if(f[i]) t.textContent="이 단계를 마쳤어요.";
+  else t.textContent=NEED[i];
+  // 자동 넘김: 지금 막 마친 단계가 가장 앞 단계일 때만 초를 센다
+  if(!demo&&ready&&!ctl.end&&ctl.mode==="auto"&&f[i]&&can&&L===i+1&&!f[i+1]&&count===null&&held!==i&&fresh===i){
+    left=8; $("stay").hidden=false; t.textContent=`이 단계를 마쳤어요! ${left}초 뒤 다음 단계로 넘어가요.`;
+    count=setInterval(()=>{ if(document.hidden) return; left--; if(left<=0){ fresh=-1; view(i+1); } else flow(); },1000);
+  }
+  if(!f[i]) fresh=i;
+}
+let fresh=-1;
+$("go").onclick=()=>{ if(st.cur<limit()) view(st.cur+1); };
+$("stay").onclick=()=>{ held=st.cur; stopCount(); flow(); };
+document.addEventListener("focusin",e=>{ if(count!==null&&e.target.tagName==="TEXTAREA"){ held=st.cur; stopCount(); flow(); } });
+nav.forEach((a,k)=>a.addEventListener("click",e=>{ e.preventDefault(); if(k<=limit()) view(k); }));
+$("finish").onclick=()=>{ const m=$("finMsg"); if(st.final.trim().length<5){ m.textContent="나의 설명을 먼저 써 보세요."; m.className="msg bad"; return; } st.finish=true; m.textContent="활동을 마쳤어요!"; m.className="msg ok"; changed(100); };
+function apply(r){
+  const old=ctl; ctl={ mode:r.mode||old.mode,stage:+r.stage||0,push:+r.push||0,end:r.status==="end" };
+  const L=limit();
+  if(first){ first=false; view(ctl.mode==="teacher"&&!ctl.end?L:Math.min(st.cur,L),false); }
+  else if(ctl.mode==="teacher"&&!ctl.end&&(old.mode!=="teacher"||old.stage!==ctl.stage)) view(L);
+  else if(ctl.push>old.push) view(Math.max(st.cur,Math.min(L,ctl.push)));
+  else if(st.cur>L) view(L);
+  else { if(ctl.mode!=="auto") stopCount(); flow(); }
+}
+let pt=null, checking=false;
+async function check(){
+  if(demo||checking) return; checking=true; clearTimeout(pt); let wait=(document.hidden?12000:5000)+Math.random()*2000;
+  try{
+    const r=await post({ a:"poll",cls:me.cls,num:me.num,key:me.key },20000);
+    if(r.ok&&(r.status==="ok"||r.status==="end")){ const start=!ready; ready=true; $("cover").hidden=true; apply(r); if(start&&dirty) send(); if(ctl.end) wait=20000; }
+    else if(r.ok){ location.replace("index.html"); return; }
+  }catch(e){ if(!ready) $("coverText").textContent="서버에 연결하는 중이에요. 잠시만 기다려 주세요."; }
+  checking=false; pt=setTimeout(check,wait);
+}
+document.addEventListener("visibilitychange",()=>{ if(!document.hidden) check(); });
+
+render(); todo(); if(st.finish) $("finMsg").textContent="활동을 마쳤어요!";
+if(demo){ ready=true; $("cover").hidden=true; view(0,false); } else { view(st.cur,false); check(); }
+document.fonts&&document.fonts.ready.then(colors);
+})();
+</script>
+</body>
+</html>
