@@ -9,7 +9,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>#statsBox{display:none!important}</style>
+<style>#statsBox{display:none!important}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;align-items:start}.two.wl{grid-template-columns:1.2fr .8fr}.two>*{margin-top:0}.two figure{margin:0}.two .card,.two .concept,.two .question{margin:0 0 10px}
+.quiz{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;align-items:start}.quiz .q{margin:0!important;padding:12px 14px}.quiz .q p{margin:0 0 6px;line-height:1.4}
+.quiz .choices{grid-template-columns:1fr 1fr;gap:6px!important}.quiz .choices.long{grid-template-columns:1fr}.quiz .choices button{padding:5px 10px;line-height:1.3;font-size:16px}
+.ord{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;align-items:start}.opool{display:flex;flex-direction:column;gap:6px}.oi{display:block;width:100%;text-align:left;line-height:1.35;padding:6px 10px}.oi.put{background:var(--warn-bg);border-color:#e0b400;color:var(--ink)}.oslots .oi{color:var(--ink)!important}
+.oslots{margin:0;padding-left:1.5em;display:flex;flex-direction:column;gap:6px}.oslots li{min-height:2.3em}.oslots li.empty{border:2px dashed var(--line);border-radius:10px;color:var(--ink-2);padding:6px 10px;font-size:14px}.oslots li.good .oi{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--surface))}.oslots li.bad .oi{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--surface))}
+.two.act{grid-template-columns:.85fr 1.15fr}.case{display:grid;grid-template-columns:170px 1fr;gap:10px;align-items:center;border-top:1px solid var(--line);padding:8px 0}.case:first-of-type{border-top:0}.case svg{width:100%;height:auto;display:block}.case .sel{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}.case .sel label{font-size:15px;display:flex;gap:4px;align-items:center}.case .msg{font-size:15px;min-height:1.3em;grid-column:1/-1;margin:0}
+.msg.ok{color:var(--ok);font-weight:700}.msg.bad{color:var(--bad);font-weight:700}
+@media (max-width:700px){.two,.two.wl,.quiz,.quiz .choices,.ord{grid-template-columns:1fr}.case{grid-template-columns:140px 1fr}}
+</style>
 <link rel="stylesheet" href="/science-class/class.css" data-sc="1">
 <script>if(location.protocol!=="file:"){document.documentElement.classList.add("sc-wait");setTimeout(function(){document.documentElement.classList.remove("sc-wait")},9000)}</script>
 <style>.sc-wait body{visibility:hidden}</style>
@@ -27,17 +36,19 @@
 </header>
 
 <nav class="steps" aria-label="수업 단계"><div class="wrap">
-  <a href="#intro">① 생각 열기</a><a href="#lab1">② 해 보기</a><a href="#lab2">③ 전자의 이동 모형</a><a href="#lab3">④ 모형 완성하기</a><a href="#quiz">⑤ 확인 문제</a><a href="#wrap">⑥ 정리</a>
+  <a href="#intro">① 생각 열기</a><a href="#lab1">② 해 보기</a><a href="#lab2">③ 전자의 이동 모형</a><a href="#lab3">④ 활동</a><a href="#quiz">⑤ 확인 문제</a><a href="#wrap">⑥ 정리</a>
 </div></nav>
 
 <main class="wrap">
 <section id="intro">
   <span class="tag">① 생각 열기 · 5분</span>
   <h2>전기를 띠지 않은 금속에 대전체를 가까이 하면?</h2>
+  <div class="two"><div>
   <figure class="fig-photo">
     <img src="images/cat-static.jpg" alt="온몸에 하얀 스티로폼 조각이 잔뜩 달라붙은 고양이" width="436" height="289">
     <figcaption>사진: <a href="https://commons.wikimedia.org/wiki/File:Cat_demonstrating_static_cling_with_styrofoam_peanuts.jpg" target="_blank" rel="noopener">Sean McGrath(원본), Black Rainbow 999(편집), 위키미디어 공용</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></figcaption>
   </figure>
+  </div><div>
   <p>고양이 털이 마찰하여 전기를 띠자 스티로폼 조각들이 털에 달라붙었어요. 그렇다면 <b>금속</b>으로 된 캔은 어떨까요?</p>
   <p>털가죽으로 문지른 플라스틱 빨대는 <b class="neg">(−)전하</b>를 띠어요. 이 빨대를 <b>마찰하지 않은 빈 알루미늄 캔</b>에 닿지 않게 가까이 가져가요.</p>
   <div class="question">알루미늄 캔은 어떻게 될까?<small>예상을 고르면 우리 반 친구들의 예상을 볼 수 있어요.</small></div>
@@ -46,15 +57,18 @@
   <div class="card"><b>알고 있는 것 확인하기</b>
     <ul><li>같은 종류의 전하 사이에는 서로 <b>밀어 내는</b> 전기력, 다른 종류의 전하 사이에는 서로 <b>끌어당기는</b> 전기력이 작용한다.</li>
     <li>원자에는 (+)전하를 띤 <b class="pos">원자핵</b>과 (−)전하를 띤 <b class="neg">전자</b>가 있고, 두 전하의 양이 같아 전기적으로 중성이다.</li></ul></div>
+  </div></div>
 </section>
 
 <section id="lab1">
   <span class="tag">② 해 보기 · 8분</span>
   <h2>대전체를 가까이 한 알루미늄 캔 관찰하기</h2>
+  <div class="two"><div>
   <figure>
     <img src="images/can-charged-straw.jpg" alt="책상 위에 눕혀 놓은 빈 알루미늄 캔에 (−)전하로 대전된 빨대를 가까이 가져가는 손" width="552" height="undefined">
     <figcaption>실험 모습 (비상교육 중학교 과학 2 교과서 232쪽 사진을 수업용으로 편집)</figcaption>
   </figure>
+  </div><div>
   <div class="card"><b>준비물</b> 빈 알루미늄 캔, 플라스틱 빨대, 털가죽
     <ol><li>책상 위에 빈 알루미늄 캔을 눕혀 놓는다.</li><li>빨대를 털가죽으로 여러 번 마찰한다.</li><li>마찰하여 <b class="neg">(−)전하로 대전된</b> 빨대를 빈 알루미늄 캔에 가까이 한다. 이때 빨대와 캔을 나란히 하고, 빨대가 캔에 <b>닿지 않게</b> 한다.</li></ol></div>
   <p><b>관찰 결과</b> 알루미늄 캔은 어떻게 되었나요?</p>
@@ -63,12 +77,14 @@
   <div class="card"><b>이야기해 보기</b>
     <p><b class="neg">(−)전하를 띤 빨대</b>를 가까이 할 때 빈 알루미늄 캔에서 빨대와 <b>가까운 부분</b>은 어떤 전하를 띠는지 전기력과 관련지어 이야기해 보자.</p>
     <details><summary>예시 답안</summary><p>빈 알루미늄 캔이 (−)전하를 띤 빨대에 의해 끌어당기는 방향의 전기력을 받았으므로, 빨대와 가까운 부분은 <b class="pos">(+)전하</b>를 띤다. 왜 (+)전하를 띠게 되었는지는 ③의 전자 이동 모형으로 확인해 봅시다.</p></details></div>
+  </div></div>
 </section>
 
 <section id="lab2">
   <span class="tag">③ 모형 탐구 · 12분</span>
   <h2>캔 속에서 무슨 일이 일어날까?</h2>
   <p>막대를 끌거나 아래 조절 막대로 대전체를 캔에 가까이 해 보세요. <b class="pos">⊕ 원자핵</b>과 <b class="neg">⊖ 전자</b> 중 무엇이 움직이나요?</p>
+  <div class="two"><div>
   <canvas id="cvM" aria-label="알루미늄 캔에 대전체를 가까이 할 때 전자가 이동하는 모형"></canvas>
   <div class="controls"><div class="seg" id="rodType"><button data-v="0">대전체 없음</button><button data-v="-1" class="on">(−)대전체</button><button data-v="1">(+)대전체</button></div></div>
   <div class="controls">
@@ -78,7 +94,7 @@
   </div>
   <ul class="todo"><li id="tdN">☐ (−)대전체를 캔 가까이 가져가기</li><li id="tdP">☐ (+)대전체를 캔 가까이 가져가기</li></ul>
   <div class="zones" aria-live="off"><div class="zone" id="zL"></div><div class="zone" id="zR"></div></div>
-  <p class="hint">※ 원자핵과 전자의 수·크기는 이해를 돕기 위해 아주 간단히 나타낸 것이에요. 실제 캔에는 셀 수 없이 많은 원자가 있어요.</p>
+  </div><div>
   <div class="card"><b>모형에서 찾아보기</b>
     <ol><li>(−)대전체를 가까이 하면 전자는 대전체에서 <b>먼 쪽</b>과 <b>가까운 쪽</b> 중 어디로 이동하나요?</li>
     <li>대전체와 가까운 쪽에도 전자가 남아 있나요? 그런데도 왜 (+)전하를 띨까요?</li>
@@ -89,35 +105,44 @@
     <p>대전된 풍선에 종잇조각이 달라붙는 것도 정전기 유도예요. 종이에는 자유롭게 이동하는 전자가 거의 없지만, <b>원자 안에서 전자가 한쪽으로 치우쳐요.</b></p>
     <canvas id="cvP" aria-label="종이의 원자 안에서 전자가 한쪽으로 치우치는 모형"></canvas>
     <div class="controls"><div class="seg" id="pType"><button data-v="0" class="on">대전체 없음</button><button data-v="-1">(−)대전체</button><button data-v="1">(+)대전체</button></div></div></details>
+  </div></div>
 </section>
 
 <section id="lab3">
   <span class="tag">④ 활동 · 10분</span>
-  <h2>전하 모형 완성하기</h2>
-  <p>캔에는 원자핵 8개와 전자 8개가 있어요. 버튼으로 <b>전자만</b> 옮겨 세 가지 경우를 나타내 보세요. 세 번째는 빨대를 문지른 <b>털가죽</b>을 가까이 한 경우예요.</p>
-  <div id="scenes"></div>
+  <h2>정전기 유도, 순서대로 설명하고 적용하기</h2>
+  <div class="two act">
+    <div class="card"><b>1. 알루미늄 캔이 빨대에 끌려오는 까닭을 순서대로 놓아 보자.</b>
+      <p class="hint">카드를 누르면 오른쪽 칸에 차례로 놓여요. 놓은 카드를 누르면 다시 빠져요.</p>
+      <div class="ord"><div class="opool" id="ordPool"></div><ol class="oslots" id="ordSlots"></ol></div>
+      <div class="controls"><button class="primary" id="ordCk">확인</button></div><p class="msg" id="ordMsg"></p>
+      <input type="hidden" id="ordRes" aria-label="순서 맞추기 결과"></div>
+    <div class="card"><b>2. 교과서 속 다른 상황에 적용해 보자.</b>
+      <p class="hint">가까운 쪽과 먼 쪽이 띠는 전하, 물체의 움직임을 고르고 확인을 눌러요.</p>
+      <div id="cases"></div></div>
+  </div>
 </section>
 
 <section id="quiz">
   <span class="tag">⑤ 확인 문제 · 6분</span>
   <h2>스스로 확인하기</h2>
   <div class="quiz" id="quizBox"></div><p class="score" id="quizScore"></p>
-  <div class="card"><b>사고력</b> 플라스틱 빨대를 털가죽으로 여러 번 마찰한 후 <b>털가죽</b>을 빈 알루미늄 캔에 가까이 하면 어떻게 될지 전자의 이동으로 설명해 보자.
-    <textarea id="essay" maxlength="500" placeholder="털가죽이 띠는 전하 → 전자의 이동 → 가까운 쪽의 전하 → 캔의 움직임"></textarea>
-    <details><summary>예시 답안</summary><p>털가죽은 (+)전하로 대전된다. (+)전하를 띤 털가죽을 캔에 가까이 하면 캔의 전자가 털가죽과 가까운 쪽으로 이동한다. 그 결과 가까운 쪽이 (−)전하를 띠게 되어 캔이 털가죽 쪽으로 끌려온다.</p></details></div>
 </section>
 
 <section id="wrap">
   <span class="tag">⑥ 정리 · 4분</span>
   <h2>공기 청정기 필터에 미세 먼지가 달라붙는 까닭은?</h2>
   <p>공기 청정기의 필터는 <b>대전</b>되어 있어요. 오늘 배운 내용으로 설명해 봅시다.</p>
+  <div class="two"><div>
   <div class="card"><label for="final"><b>나의 설명</b></label><textarea id="final" maxlength="500" placeholder="'정전기 유도', '전기력'이라는 말을 넣어 써 보세요."></textarea>
   <details><summary>예시 답안</summary><p>전기를 띠지 않은 미세 먼지가 대전된 필터 가까이 지나가면 정전기 유도가 일어나, 필터와 가까운 쪽이 필터와 다른 종류의 전하를 띤다. 따라서 끌어당기는 전기력을 받아 필터에 달라붙는다.</p></details></div>
+  </div><div>
   <div class="card"><label for="ask"><b>더 궁금한 점</b> <span class="hint">(없으면 비워 두세요)</span></label><textarea id="ask" maxlength="300"></textarea></div>
   <div class="card"><b>처음 예상</b> <span id="echo" class="hint"></span></div>
   <button class="primary" id="finish">활동 마치기</button> <span class="msg" id="finMsg" role="status"></span>
+  </div></div>
   <details class="card"><summary>수업 흐름 (45분)</summary><div class="tablewrap"><table><thead><tr><th>단계</th><th>시간</th><th>활동</th></tr></thead><tbody>
-    <tr><td>① 생각 열기</td><td>5분</td><td>예상 → 우리 반 예상 확인</td></tr><tr><td>② 실험</td><td>8분</td><td>빨대와 알루미늄 캔 관찰</td></tr><tr><td>③ 모형 탐구</td><td>12분</td><td>전자의 이동 관찰 → 정전기 유도 개념</td></tr><tr><td>④ 모형 완성</td><td>10분</td><td>세 가지 경우의 전하 분포 나타내기</td></tr><tr><td>⑤ 확인 문제</td><td>6분</td><td>6문항, 사고력</td></tr><tr><td>⑥ 정리</td><td>4분</td><td>미세 먼지가 달라붙는 까닭</td></tr></tbody></table></div></details>
+    <tr><td>① 생각 열기</td><td>5분</td><td>예상 → 우리 반 예상 확인</td></tr><tr><td>② 실험</td><td>8분</td><td>빨대와 알루미늄 캔 관찰</td></tr><tr><td>③ 모형 탐구</td><td>12분</td><td>전자의 이동 관찰 → 정전기 유도 개념</td></tr><tr><td>④ 활동</td><td>10분</td><td>까닭을 순서대로 놓기 → 금속 공·털가죽·종잇조각 상황에 적용</td></tr><tr><td>⑤ 확인 문제</td><td>6분</td><td>4문항</td></tr><tr><td>⑥ 정리</td><td>4분</td><td>미세 먼지가 달라붙는 까닭</td></tr></tbody></table></div></details>
 </section>
 </main>
 <footer class="wrap">중학교 2학년 과학 Ⅶ. 전기와 자기 — 1. 전기의 발생 · 정전기 유도</footer>
@@ -140,7 +165,7 @@ ESI.theme($("themeBtn"),()=>colors());
 colors(); try{ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",colors); }catch(e){}
 
 /* ---------- 학생 기록과 전송 ---------- */
-const TEXTS=["essay","final","ask"];
+const TEXTS=["final","ask"];
 const blank=()=>({ cls:me.cls,num:me.num,key:me.key,day:today(),predict:"",observe:"",m:[null,null,null],quiz:{},essay:"",final:"",ask:"",x:{n:false,p:false},finish:false,cur:0 });
 let st=blank();
 if(!demo) try{ const s=JSON.parse(ls.get("st")||"null"); if(s && s.key===me.key && s.cls===me.cls && s.num===me.num && s.day===today() && Array.isArray(s.m) && s.quiz) st=Object.assign(blank(),s); else { ls.del("st"); ls.del("dirty"); } }catch(e){ ls.del("st"); ls.del("dirty"); }
@@ -189,7 +214,7 @@ function renderTop(){
   const o=$("obsMsg"); o.className="msg";
   o.textContent=!st.observe?"":st.observe==="끌려왔다"?"캔이 빨대 쪽으로 끌려왔어요. 전기를 띠지 않은 캔이 왜 끌려올까요? ③에서 알아봅시다.":"그럴 수 있어요. 빨대를 더 많이 문지르거나 캔에 더 가까이 해 보세요. (습한 날에는 잘 안 될 수 있어요)";
 }
-function render(){ renderTop(); TEXTS.forEach(id=>$(id).value=st[id]); $("bars").innerHTML=""; buildScenes(); buildQuiz(); }
+function render(){ renderTop(); TEXTS.forEach(id=>$(id).value=st[id]); $("bars").innerHTML=""; buildActivity(); buildQuiz(); }
 
 /* ---------- 그리기 도구 ---------- */
 function setup(cv,W,H){ const d=Math.min(devicePixelRatio||1,2); cv.width=W*d; cv.height=H*d; const c=cv.getContext("2d"); c.setTransform(d,0,0,d,0,0); return c; }
@@ -271,57 +296,62 @@ if("IntersectionObserver" in window) new IntersectionObserver(es=>es.forEach(e=>
     if(type){ rr(c,770,30,36,210,16); c.fillStyle=type<0?"#4f86d8":"#dd6a90"; c.fill(); for(let k=0;k<5;k++) ball(c,788,56+k*40,10,type<0?NCOL:PCOL,type); text(c,type<0?"(−)대전체":"(+)대전체",788,14,type<0?C.neg:C.pos,15,900); } }
   seg("pType",v=>{ type=+v; mark("pType",v); draw(); }); redraw.push(draw); draw(); })();
 
-/* ---------- ④ 모형 완성하기 ---------- */
-const SC=[ { t:"1. 대전체가 없을 때",rod:"z",r:"대전체 없음",far:0,near:0,move:"움직이지 않는다" },
-           { t:"2. (−)전하를 띤 빨대를 오른쪽에 가까이 할 때",rod:"n",r:"−",far:-1,near:1,move:"끌려온다" },
-           { t:"3. (+)전하를 띤 털가죽을 오른쪽에 가까이 할 때",rod:"p",r:"+",far:1,near:-1,move:"끌려온다" } ];
-const CH=["","(+)전하","(−)전하","띠지 않음"], chOf=n=>n===0?"띠지 않음":n>0?"(+)전하":"(−)전하";
-function buildScenes(){
-  const box=$("scenes"); box.innerHTML="";
-  SC.forEach((sc,i)=>{
-    const sv=st.m[i], w=Object.assign({ l:4,a:"",b:"",mv:"",tries:0 },sv&&sv.w||{});
-    const d=document.createElement("div"); d.className="card scene";
-    const opt=(arr,v)=>arr.map(x=>`<option value="${x}"${x===v?" selected":""}>${x||"선택"}</option>`).join("");
-    d.innerHTML=`<b>${sc.t}</b><div class="row"><div class="can"><div class="L"></div><div class="R"></div></div><div class="rod ${sc.rod}">${sc.r}</div></div>
-      <div class="controls"><button class="toL">◀ 전자 1개 왼쪽으로</button><button class="toR">전자 1개 오른쪽으로 ▶</button></div>
-      <div class="controls"><label class="ctrl">왼쪽 <select class="sa">${opt(CH,w.a)}</select></label><label class="ctrl">오른쪽 <select class="sb">${opt(CH,w.b)}</select></label><label class="ctrl">캔은 <select class="sm">${opt(["","끌려온다","밀려난다","움직이지 않는다"],w.mv)}</select></label><button class="primary ck">확인</button></div><div class="msg"></div>`;
-    const q=s=>d.querySelector(s), m=q(".msg");
-    const half=n=>`<div class="chs">${'<span class="c p">+</span>'.repeat(4)}</div><div class="chs">${'<span class="c e">−</span>'.repeat(n)}</div><span class="hint">전자 ${n}개</span>`;
-    const show=()=>{ q(".L").innerHTML=half(w.l); q(".R").innerHTML=half(8-w.l); q(".toL").disabled=w.l===8; q(".toR").disabled=w.l===0; };
-    const edit=()=>{ w.a=q(".sa").value; w.b=q(".sb").value; w.mv=q(".sm").value; m.textContent=""; };
-    q(".toL").onclick=()=>{ w.l++; edit(); show(); }; q(".toR").onclick=()=>{ w.l--; edit(); show(); };
-    [".sa",".sb",".sm"].forEach(s=>q(s).onchange=edit);
-    const judge=()=>{
-      const L=4-w.l, R=w.l-4;  // (+)개수 - 전자 개수
-      if(Math.sign(L)!==sc.far) return i===0?"대전체가 없으면 전자가 고르게 퍼져 있어요.":"전자는 (−)전하를 띠어요. 대전체와 전자 사이에 밀어 내는 힘과 끌어당기는 힘 중 무엇이 작용할까요?";
-      if(w.a!==chOf(L)||w.b!==chOf(R)) return "원자핵의 수와 전자의 수를 비교해서 양쪽의 전하를 다시 골라 보세요.";
-      if(w.mv!==sc.move) return i===0?"대전체가 없으면 캔에 전기력이 작용할까요?":"대전체와 가까운 쪽은 대전체와 같은 종류, 다른 종류 중 어느 전하인가요?";
-      return "";
-    };
-    q(".ck").onclick=()=>{
-      edit();
-      if(!w.a||!w.b||!w.mv){ m.textContent="세 칸을 모두 골라 보세요."; m.className="msg"; return; }
-      w.tries++; const bad=judge();
-      m.textContent=bad?"❌ "+bad:"⭕ 맞았어요!"+(i&&(w.l===8||w.l===0)?" 다만 실제로는 전자가 모두 옮겨 가지 않고 일부만 이동해요.":""); m.className="msg "+(bad?"bad":"ok");
-      st.m[i]={ ok:!bad,tries:w.tries,desc:`전자 왼${w.l} 오${8-w.l}, 왼쪽 ${w.a}, 오른쪽 ${w.b}, ${w.mv}`,w:Object.assign({},w) }; changed(1000);
-    };
-    if(sv){ m.textContent=sv.ok?"⭕ 맞았어요!":"다시 확인해 보세요."; m.className="msg "+(sv.ok?"ok":""); }
-    show(); box.appendChild(d);
+/* ---------- ④ 활동: 순서 맞추기 + 상황 적용 ---------- */
+const ORD=["털가죽으로 마찰한 빨대가 (−)전하를 띤다.","빨대를 캔에 가까이 하면 캔의 전자가 빨대로부터 밀어 내는 전기력을 받는다.","캔의 전자가 빨대에서 먼 쪽으로 이동한다. (원자핵은 움직이지 않는다)","빨대와 가까운 쪽은 (+)전하, 먼 쪽은 (−)전하를 띤다.","가까운 쪽의 (+)전하와 빨대의 (−)전하가 서로 끌어당겨 캔이 빨대 쪽으로 끌려온다."];
+const CASES=[
+ {id:"ball",t:"(−)전하로 대전된 빨대를 가벼운 <b>금속 공</b>에 가까이 할 때",obj:"금속 공",rod:"빨대",sign:-1,round:true,tip:"금속 공의 전자가 빨대에서 먼 쪽으로 밀려나요."},
+ {id:"fur",t:"빨대를 문지른 <b>털가죽</b>을 알루미늄 캔에 가까이 할 때",obj:"알루미늄 캔",rod:"털가죽",sign:1,tip:"털가죽은 전자를 잃어 (+)전하를 띠어요. 캔의 전자가 털가죽 쪽으로 끌려와요."},
+ {id:"paper",t:"대전된 (−)고무풍선을 <b>종잇조각</b>에 가까이 할 때",obj:"종잇조각",rod:"풍선",sign:-1,tip:"종이는 자유 전자가 거의 없지만 원자 안에서 전자가 먼 쪽으로 치우쳐요."}];
+const CHG=["선택","(+)전하","(−)전하"], MOV=["선택","끌려온다","밀려난다"];
+function caseSvg(c,near,far){
+  const s=c.sign<0?"−":"+", col=c.sign<0?NCOL:PCOL, sh=c.round?'<ellipse cx="90" cy="60" rx="62" ry="44"':'<rect x="28" y="22" width="124" height="76" rx="18"';
+  const mk=(x,v)=>v?`<text x="${x}" y="66" text-anchor="middle" font-size="22" font-weight="900" fill="${v>0?PCOL:NCOL}">${(v>0?"+":"−").repeat(3)}</text>`:"";
+  return `<svg viewBox="0 0 300 118" aria-hidden="true">${sh} fill="#e9edf5" stroke="#8a86a8" stroke-width="3"/><path d="M90,18V102" stroke="#8a86a8" stroke-dasharray="5 5" stroke-width="2"/>
+  <text x="58" y="114" text-anchor="middle" font-size="14" fill="#58547a">먼 쪽</text><text x="122" y="114" text-anchor="middle" font-size="14" fill="#58547a">가까운 쪽</text>${mk(58,far)}${mk(122,near)}
+  <rect x="200" y="14" width="44" height="90" rx="14" fill="${col}" opacity=".85"/><text x="222" y="66" text-anchor="middle" font-size="30" font-weight="900" fill="#fff">${s}</text><text x="266" y="64" text-anchor="middle" font-size="18" font-weight="700" fill="#232046">${c.rod}</text></svg>`;
+}
+function buildActivity(){
+  // 1. 순서 맞추기
+  let seq=[], tries=0, ok=false; const mix=[3,0,4,1,2], pool=$("ordPool"), slots=$("ordSlots"), msg=$("ordMsg"), res=$("ordRes");
+  const draw=()=>{ slots.innerHTML=""; pool.innerHTML="";
+    ORD.forEach((_,i)=>{ const li=document.createElement("li"); if(seq[i]===undefined){ li.className="empty"; li.textContent="여기에 놓여요"; } else { const b=document.createElement("button"); b.className="oi put"; b.textContent=ORD[seq[i]]; b.onclick=()=>{ seq.splice(i,1); ok=false; draw(); }; li.append(b); } slots.append(li); });
+    mix.filter(j=>!seq.includes(j)).forEach(j=>{ const b=document.createElement("button"); b.className="oi"; b.textContent=ORD[j]; b.onclick=()=>{ seq.push(j); ok=false; msg.textContent=""; msg.className="msg"; draw(); }; pool.append(b); });
+    if(!pool.children.length){ const p=document.createElement("p"); p.className="hint"; p.textContent="모두 놓았어요. 확인을 눌러 보세요."; pool.append(p); } };
+  const mark=g=>[...slots.children].forEach((li,i)=>li.className=g[i]?"good":"bad");
+  const save=()=>{ res.value=(ok?"정답":"수정 중")+` (확인 ${tries}번)`; res.dispatchEvent(new Event("input",{bubbles:true})); };
+  $("ordCk").onclick=()=>{ if(seq.length<ORD.length){ msg.textContent="카드를 모두 순서대로 놓아 보세요."; msg.className="msg"; return; } tries++; const g=seq.map((j,i)=>j===i); ok=g.every(Boolean); mark(g);
+    if(ok){ msg.textContent="⭕ 순서가 모두 맞았어요! 전자만 이동해서 가까운 쪽이 다른 종류의 전하를 띠어요."; msg.className="msg ok"; }
+    else if(tries>=3){ seq=ORD.map((_,i)=>i); draw(); mark(seq.map(()=>true)); msg.textContent="정답 순서를 보여 줄게요. 위에서부터 차례로 읽어 보세요."; msg.className="msg"; }
+    else { msg.textContent=`❌ ${g.filter(Boolean).length}개가 제자리예요. 빨간 카드를 눌러 빼고 다시 놓아 보세요.`; msg.className="msg bad"; }
+    save(); };
+  res.addEventListener("input",e=>{ if(e.isTrusted===false&&/^정답/.test(res.value)&&!ok&&!tries){ ok=true; tries=1; seq=ORD.map((_,i)=>i); draw(); mark(seq.map(()=>true)); msg.textContent="⭕ 순서가 모두 맞았어요!"; msg.className="msg ok"; } });
+  draw();
+  // 2. 세 가지 상황
+  const box=$("cases"); box.innerHTML="";
+  CASES.forEach(c=>{
+    const near=-c.sign, far=c.sign, d=document.createElement("div"); d.className="case";
+    const opt=a=>a.map((x,i)=>`<option value="${i?x:""}">${x}</option>`).join("");
+    d.innerHTML=`<div class="pic">${caseSvg(c,0,0)}</div><div><p style="margin:0 0 4px;font-weight:500">${c.t}</p><div class="sel"><label>가까운 쪽 <select id="c_${c.id}_n" aria-label="${c.obj} 가까운 쪽">${opt(CHG)}</select></label><label>먼 쪽 <select id="c_${c.id}_f" aria-label="${c.obj} 먼 쪽">${opt(CHG)}</select></label><label>움직임 <select id="c_${c.id}_m" aria-label="${c.obj}의 움직임">${opt(MOV)}</select></label><button class="primary ck">확인</button></div></div><p class="msg"></p>`;
+    const q=x=>d.querySelector(x), m=q(".msg"), sn=q(`#c_${c.id}_n`), sf=q(`#c_${c.id}_f`), sm=q(`#c_${c.id}_m`), want=v=>v>0?"(+)전하":"(−)전하";
+    const judge=()=>{ if(!sn.value||!sf.value||!sm.value){ m.textContent="세 칸을 모두 골라 보세요."; m.className="msg"; return; }
+      const good=sn.value===want(near)&&sf.value===want(far)&&sm.value==="끌려온다";
+      if(good){ m.textContent="⭕ 맞았어요! "+c.tip; m.className="msg ok"; q(".pic").innerHTML=caseSvg(c,near,far); }
+      else { m.textContent="❌ "+(sn.value!==want(near)?"대전체와 가까운 쪽은 대전체와 같은 종류일까요, 다른 종류일까요?":sf.value!==want(far)?"먼 쪽은 가까운 쪽과 반대 전하를 띠어요.":"가까운 쪽과 대전체는 다른 종류의 전하예요. 어떤 힘이 작용할까요?"); m.className="msg bad"; } };
+    q(".ck").onclick=judge; [sn,sf,sm].forEach(x=>x.addEventListener("change",()=>{ if(x.dataset.r) return; m.textContent=""; }));
+    box.append(d);
   });
 }
 
 /* ---------- ⑤ 확인 문제 ---------- */
 const Q=[
  {q:"전기를 띠지 않은 물체에 대전체를 가까이 할 때, 가까운 쪽은 대전체와 다른 종류의 전하를, 먼 쪽은 같은 종류의 전하를 띠는 현상은?",c:["마찰 전기","정전기 유도","방전","전류"],a:1,e:"대전체를 가까이 하기만 해도 나타나는 이 현상을 정전기 유도라고 해요."},
- {q:"알루미늄 캔에 (−)대전체를 가까이 할 때 캔의 전자는?",c:["대전체에서 먼 쪽으로 이동한다","대전체와 가까운 쪽으로 이동한다","캔에서 대전체로 옮겨 간다","움직이지 않는다"],a:0,e:"전자와 (−)대전체는 같은 종류의 전하라서 서로 밀어 내요."},
  {q:"금속에서 정전기 유도가 일어날 때 이동하는 것은?",c:["원자핵","원자핵과 전자","원자 전체","전자"],a:3,e:"원자핵은 움직이지 않고 전자만 이동해요."},
  {q:"(−)대전체를 가까이 한 금속에서, 대전체와 먼 쪽이 (−)전하를 띠는 까닭은?",c:["(+)전하가 모두 사라져서","전자가 새로 만들어져서","(−)전하의 양이 (+)전하의 양보다 많아져서","원자핵이 가까운 쪽으로 이동해서"],a:2,e:"먼 쪽에도 (+)전하가 그대로 있지만, 전자가 몰려와 (−)전하의 양이 더 많아졌어요."},
- {q:"알루미늄 캔에 (+)대전체를 닿지 않게 가까이 하면 캔은?",c:["밀려난다","움직이지 않는다","끌려온다","끌려오다가 밀려난다"],a:2,e:"가까운 쪽이 (−)전하를 띠므로 (+)대전체에 끌려와요."},
  {q:"캔에 닿지 않게 가까이 했던 대전체를 다시 멀리 치우면 캔은?",c:["계속 (+)전하를 띤다","전자가 다시 고르게 퍼져 전하를 띠지 않는다","계속 (−)전하를 띤다","전자가 모두 사라진다"],a:1,e:"캔의 전자 수는 변하지 않았으므로 대전체를 치우면 처음 상태로 돌아가요."}];
 function buildQuiz(){
   const box=$("quizBox"); box.innerHTML="";
   Q.forEach((it,i)=>{
-    const d=document.createElement("div"); d.className="q card"; const p=document.createElement("p"); p.textContent=`${i+1}. ${it.q}`; const ch=document.createElement("div"); ch.className="choices"; const fb=document.createElement("div"); fb.className="fb";
+    const d=document.createElement("div"); d.className="q card"; const p=document.createElement("p"); p.textContent=`${i+1}. ${it.q}`; const ch=document.createElement("div"); ch.className="choices"+(it.c.some(t=>t.length>16)?" long":""); const fb=document.createElement("div"); fb.className="fb";
     const reveal=j=>{ ch.children[j].classList.add(j===it.a?"correct":"wrong"); ch.children[it.a].classList.add("correct"); fb.textContent=(j===it.a?"⭕ 정답! ":"❌ 아쉬워요. ")+it.e; };
     it.c.forEach((t,j)=>{ const b=document.createElement("button"); b.textContent=`${"①②③④"[j]} ${t}`; b.onclick=()=>{ if(st.quiz[i]!==undefined) return; st.quiz[i]=j; reveal(j); score(); changed(2500); }; ch.appendChild(b); });
     d.append(p,ch,fb); box.appendChild(d); if(st.quiz[i]!==undefined) reveal(st.quiz[i]);
@@ -333,9 +363,9 @@ function todo(){ [["tdN","n","(−)"],["tdP","p","(+)"]].forEach(([i,k,t])=>{ $(
 
 /* ---------- 단계 진행 ---------- */
 const IDS=["intro","lab1","lab2","lab3","quiz","wrap"], nav=[...document.querySelectorAll("nav.steps a")];
-const NEED=["예상을 하나 골라 보세요.","실험을 하고 관찰 결과를 골라 보세요.","(−)대전체와 (+)대전체를 모두 캔 가까이 가져가 보세요.","세 가지 모형을 모두 완성해 보세요.","여섯 문제를 모두 풀어 보세요.","나의 설명을 쓰고 [활동 마치기]를 눌러 보세요."];
+const NEED=["예상을 하나 골라 보세요.","실험을 하고 관찰 결과를 골라 보세요.","(−)대전체와 (+)대전체를 모두 캔 가까이 가져가 보세요.","순서 맞추기와 상황 적용을 해 보세요.","네 문제를 모두 풀어 보세요.","나의 설명을 쓰고 [활동 마치기]를 눌러 보세요."];
 let ctl={ mode:"auto",stage:0,push:0,end:false }, first=true, count=null, left=0, held=-1;
-function doneFlags(){ return [!!st.predict,!!st.observe,st.x.n&&st.x.p,st.m.every(x=>x&&(x.ok||x.tries>=3)),Object.keys(st.quiz).length===Q.length,st.finish]; }
+function doneFlags(){ return [!!st.predict,!!st.observe,st.x.n&&st.x.p,true,Object.keys(st.quiz).length===Q.length,st.finish]; }
 function limit(){ if(demo) return 5; const f=doneFlags(); let k=0; while(k<5&&f[k]) k++; return Math.min(5,Math.max(ctl.mode==="teacher"?ctl.stage:k,ctl.push)); }
 function stopCount(){ clearInterval(count); count=null; }
 function view(i,top=true){ const was=st.cur; stopCount(); st.cur=i; IDS.forEach((id,k)=>$(id).hidden=k!==i); if(top) $(IDS[i]).scrollIntoView({block:"start",behavior:"instant"}); if(was!==i&&ready) changed(600); else flow(); }
